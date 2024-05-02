@@ -25,5 +25,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: build apk
-      - run: docker pull expo-build:latest
-      - run: docker compose run expo-build
+      - run: |
+             docker pull expo-build:latest
+             docker compose run expo-build
