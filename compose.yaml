@@ -9,7 +9,7 @@
 # https://github.com/docker/awesome-compose
 services:
   expo-build:
-    image: ${CONTAINER_REGISTRY_BASE}expo-build:${IMAGE_TAG:-latest}
+    image: expo-build:${IMAGE_TAG:-latest}
     command: "eas build --platform android --local --non-interactive"
     build:
       context: .
