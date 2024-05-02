@@ -8,7 +8,7 @@ on:
 
 jobs:
 
-  build:
+  build-expo:
 
     runs-on: ubuntu-latest
 
@@ -16,3 +16,12 @@ jobs:
     - uses: actions/checkout@v4
     - name: Build the Docker image
       run: docker compose build
+
+  build-apk:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Build the Docker image
+      run: docker compose run expo-build
