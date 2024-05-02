@@ -23,8 +23,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
-      - name: build apk
-      - run: |
-             docker pull expo-build:latest
-             docker compose run expo-build
+    - uses: actions/checkout@v4
+    - name: build apk
+    - run: |
+           docker pull expo-build:latest
+           docker compose run expo-build
