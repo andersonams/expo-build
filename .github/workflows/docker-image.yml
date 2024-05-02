@@ -15,13 +15,13 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build the Docker image
-      run: docker compose build
+      run: docker compose build --push
 
-  build-apk:
+  # build-apk:
 
-    runs-on: ubuntu-latest
+  #   runs-on: ubuntu-latest
 
-    steps:
-    - uses: actions/checkout@v4
-    - name: Build the Docker image
-      run: docker compose run expo-build
+  #   steps:
+  #   - uses: actions/checkout@v4
+  #   - name: Build the Docker image
+  #     run: docker compose run expo-build
