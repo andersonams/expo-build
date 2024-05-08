@@ -51,3 +51,18 @@ jobs:
           docker tag $IMAGE_NAME $IMAGE_ID:$VERSION
           docker push $IMAGE_ID:$VERSION
 
+  build-apk:
+    needs: push
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Log in to registry
+      run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+
+    - name: Build apk
+      run: |
+           docker pull ghcr.io/andersonams/expo-build:merge
+           docker compose run ghcr.io/andersonams/expo-build:merge
