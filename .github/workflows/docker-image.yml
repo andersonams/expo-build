@@ -65,4 +65,4 @@ jobs:
 
     - name: Build apk
       run: |
-           docker compose run expo-build -ls -la
+           docker compose run expo-build ls -la
